@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { BrutalistCard } from "@/components/BrutalistCard";
 import Image from "next/image";
@@ -31,15 +30,23 @@ export function Hero() {
           </div>
         </div>
         <div className="relative">
-          <BrutalistCard className="p-0 overflow-hidden -rotate-1">
-            <Image 
-              src={heroImage?.imageUrl || ""} 
-              alt={heroImage?.description || ""} 
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-              data-ai-hint="delivery motorcycle"
-            />
+          <BrutalistCard className="p-0 overflow-hidden -rotate-1 min-h-[400px] flex items-center justify-center bg-muted">
+            {heroImage?.imageUrl ? (
+              <Image 
+                src={heroImage.imageUrl} 
+                alt={heroImage.description || "Envíos DosRuedas Delivery"} 
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                data-ai-hint="delivery motorcycle"
+                priority
+              />
+            ) : (
+              <div className="flex flex-col items-center gap-4 text-muted-foreground">
+                <Truck className="w-16 h-16 opacity-20" />
+                <p className="font-headline text-sm uppercase opacity-40">Cargando Imagen...</p>
+              </div>
+            )}
           </BrutalistCard>
           <div className="absolute -bottom-6 -left-6 z-10">
             <BrutalistCard variant="secondary" className="py-2 px-6 flex items-center gap-3">
