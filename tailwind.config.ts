@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -11,7 +12,8 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Anton', 'sans-serif'],
+        subheadline: ['Bebas Neue', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -70,6 +72,10 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      boxShadow: {
+        brutal: '6px 6px 0px 0px rgba(0,0,0,1)',
+        'brutal-sm': '3px 3px 0px 0px rgba(0,0,0,1)',
       },
       keyframes: {
         'accordion-down': {

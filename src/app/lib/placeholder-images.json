@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-delivery",
+      "description": "A delivery motorcycle or van moving through a city street.",
+      "imageUrl": "https://picsum.photos/seed/envios-1/1200/800",
+      "imageHint": "delivery motorcycle"
+    },
+    {
+      "id": "warehouse-logistics",
+      "description": "Modern warehouse with shelves and high-tech management.",
+      "imageUrl": "https://picsum.photos/seed/envios-2/800/600",
+      "imageHint": "warehouse logistics"
+    },
+    {
+      "id": "tracking-map",
+      "description": "Digital map showing a delivery route.",
+      "imageUrl": "https://picsum.photos/seed/envios-3/800/600",
+      "imageHint": "gps map"
+    },
+    {
+      "id": "e-commerce-package",
+      "description": "Someone holding a cardboard package with a smile.",
+      "imageUrl": "https://picsum.photos/seed/envios-4/600/400",
+      "imageHint": "delivery package"
+    }
+  ]
+}
