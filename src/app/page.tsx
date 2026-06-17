@@ -1,6 +1,6 @@
 
 import { Navigation } from "@/components/Navigation";
-import { HeroDitheringCard } from "@/components/ui/hero-dithering-card";
+import { Hero } from "@/components/sections/Hero";
 import { Vision } from "@/components/sections/Vision";
 import { Services } from "@/components/sections/Services";
 import { CTA } from "@/components/sections/CTA";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen selection:bg-accent selection:text-dark">
       <Navigation />
-      <HeroDitheringCard />
+      <Hero />
       <Vision />
       <Services />
       <CTA />
