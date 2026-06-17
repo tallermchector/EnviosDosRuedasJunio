@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Phone, Calculator, ChevronDown, Menu, X, House, Mail } from "lucide-react";
 import { 
@@ -22,14 +23,23 @@ export function Navigation() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[300] flex items-center transition-all duration-300 bg-[rgba(30,58,138,0.95)] backdrop-blur-md border-b-2 border-accent ${scrolled ? 'h-20' : 'h-[90px]'}`}>
-      <div className="container mx-auto px-8 flex justify-between items-center h-full">
+    <header className={`fixed top-0 left-0 w-full z-[300] flex items-center transition-all duration-300 bg-[rgba(30,58,138,0.95)] dark:bg-[rgba(15,23,42,0.95)] backdrop-blur-md border-b-2 border-accent ${scrolled ? 'h-20' : 'h-[90px]'}`}>
+      <div className="container mx-auto px-4 md:px-8 flex justify-between items-center h-full">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-4 group no-underline">
-          <img src="/logo_envios.webp" alt="Envíos DosRuedas Logo" className="h-[60px] w-auto object-contain transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+        <Link href="/" className="flex items-center gap-2 md:gap-4 group no-underline min-h-[44px]">
+          <div className="relative h-[50px] w-[50px] md:h-[60px] md:w-[60px]">
+            <Image
+              src="/logo_envios.webp"
+              alt="Envíos DosRuedas Logo"
+              fill
+              sizes="(max-width: 768px) 50px, 60px"
+              className="object-contain transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
+              priority
+            />
+          </div>
           <div className="flex flex-col brand-text hidden sm:flex">
-            <span className="font-headline text-2xl text-white leading-none uppercase">Envíos Dosruedas</span>
-            <span className="text-accent text-[0.85rem] font-medium lowercase tracking-[0.5px]">tu solución confiable</span>
+            <span className="font-headline text-xl md:text-2xl text-white leading-none uppercase">Envíos Dosruedas</span>
+            <span className="text-accent text-[0.75rem] md:text-[0.85rem] font-medium lowercase tracking-[0.5px]">tu solución confiable</span>
           </div>
         </Link>
 
@@ -79,7 +89,12 @@ export function Navigation() {
           <Link href="/cotizar" className="btn btn-primary h-12 flex items-center gap-2 text-xl px-6">
             <Calculator className="w-5 h-5" /> <span className="hidden sm:inline">Cotizar Envío</span>
           </Link>
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-white">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-white min-h-[44px] min-w-[44px] flex items-center justify-center rounded-md hover:bg-white/10 transition-colors"
+            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileMenuOpen}
+          >
             {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
         </div>
@@ -87,14 +102,14 @@ export function Navigation() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[90px] bg-primary z-[200] flex flex-col p-8 gap-8 animate-in slide-in-from-right lg:hidden">
-          <Link href="/" onClick={() => setMobileMenuOpen(false)} className="font-headline text-4xl text-white hover:text-accent uppercase">Inicio</Link>
-          <Link href="#nosotros" onClick={() => setMobileMenuOpen(false)} className="font-headline text-4xl text-white hover:text-accent uppercase">Nosotros</Link>
-          <Link href="#servicios" onClick={() => setMobileMenuOpen(false)} className="font-headline text-4xl text-white hover:text-accent uppercase">Servicios</Link>
-          <Link href="#contacto" onClick={() => setMobileMenuOpen(false)} className="font-headline text-4xl text-white hover:text-accent uppercase">Contacto</Link>
-          <div className="mt-auto flex flex-col gap-6">
-             <a href="tel:+5492236602699" className="flex items-center gap-4 text-white text-2xl font-subheadline tracking-wider">
-               <Phone className="text-accent w-8 h-8" /> +54 223 660-2699
+        <div className="fixed inset-0 top-[90px] bg-primary dark:bg-slate-900 z-[200] flex flex-col p-6 md:p-8 gap-8 animate-in slide-in-from-right lg:hidden overflow-y-auto">
+          <Link href="/" onClick={() => setMobileMenuOpen(false)} className="font-headline text-3xl md:text-4xl text-white hover:text-accent uppercase min-h-[44px] flex items-center">Inicio</Link>
+          <Link href="#nosotros" onClick={() => setMobileMenuOpen(false)} className="font-headline text-3xl md:text-4xl text-white hover:text-accent uppercase min-h-[44px] flex items-center">Nosotros</Link>
+          <Link href="#servicios" onClick={() => setMobileMenuOpen(false)} className="font-headline text-3xl md:text-4xl text-white hover:text-accent uppercase min-h-[44px] flex items-center">Servicios</Link>
+          <Link href="#contacto" onClick={() => setMobileMenuOpen(false)} className="font-headline text-3xl md:text-4xl text-white hover:text-accent uppercase min-h-[44px] flex items-center">Contacto</Link>
+          <div className="mt-auto flex flex-col gap-6 pb-6">
+             <a href="tel:+5492236602699" className="flex items-center gap-4 text-white text-xl md:text-2xl font-subheadline tracking-wider min-h-[44px]">
+               <Phone className="text-accent w-6 h-6 md:w-8 md:h-8" /> +54 223 660-2699
              </a>
           </div>
         </div>
