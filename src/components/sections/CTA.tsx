@@ -2,6 +2,7 @@
 "use client";
 
 import { CheckCircle2, Phone, Calculator, Bolt } from "lucide-react";
+import Image from "next/image";
 
 export function CTA() {
   return (
@@ -9,13 +10,13 @@ export function CTA() {
       <div 
         className="absolute inset-0 z-0 opacity-20 animate-slow-zoom" 
         style={{ 
-          backgroundImage: "url('resources/aDC-m8qZ91F4iv1AmrW_vS')", 
+          backgroundImage: "url('/resources/aDC-m8qZ91F4iv1AmrW_vS')",
           backgroundSize: 'cover', 
           backgroundPosition: 'center' 
         }} 
       />
       
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="cta-wrapper max-w-[800px] mx-auto border border-white/10 p-16 bg-gradient-to-br from-primary/80 to-[#0f172a]/90 backdrop-blur-md rounded-[20px] shadow-[inset_0_0_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[inset_0_0_50px_rgba(0,0,0,0.5),0_25px_50px_rgba(0,0,0,0.4)]">
           <div className="inline-flex items-center gap-2 bg-accent/20 text-accent border border-accent/40 px-5 py-2 rounded-full font-subheadline text-[1.2rem] tracking-wider mb-6">
             <Bolt className="w-5 h-5" /> ¡Empezá Ahora!
@@ -26,7 +27,7 @@ export function CTA() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <a href="https://api.whatsapp.com/send/?phone=5492236602699" target="_blank" className="btn btn-primary">
-              <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/brands/whatsapp.svg" className="w-6 h-6 fill-current" /> Contactanos por WhatsApp
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/brands/whatsapp.svg" alt="WhatsApp" className="w-6 h-6 fill-current" /> Contactanos por WhatsApp
             </a>
             <a href="/tarifas" className="btn btn-secondary">
               <Calculator className="w-6 h-6" /> Ver Tarifas 2026
