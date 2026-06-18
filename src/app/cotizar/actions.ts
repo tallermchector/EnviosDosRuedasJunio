@@ -17,7 +17,6 @@ export async function calculateExpressQuote(origin: string, destination: string)
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   // Mock distance calculation (1 - 15 km)
-  // In production, use Google Distance Matrix API
   const distanceKm = Math.floor(Math.random() * 14) + 1 + Math.random();
   const roundedDistance = Math.round(distanceKm * 100) / 100;
 
@@ -38,15 +37,46 @@ export async function calculateExpressQuote(origin: string, destination: string)
     price = 8200 + (extraKm * 1000);
   }
 
-  // Round price to 2 decimals
   price = Math.round(price * 100) / 100;
-
-  // Mock estimated time based on distance (urban speed average)
-  const estimatedMinutes = Math.round(roundedDistance * 4) + 15; // roughly 4 min per km + 15 min buffer
+  const estimatedMinutes = Math.round(roundedDistance * 4) + 15;
 
   return {
     distance: roundedDistance,
     price,
     estimatedTime: `${estimatedMinutes} - ${estimatedMinutes + 15} min`,
+  };
+}
+
+export async function calculateLowCostQuote(origin: string, destination: string): Promise<QuoteResult> {
+  // Simulate network delay
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // Mock distance calculation (1 - 15 km)
+  const distanceKm = Math.floor(Math.random() * 14) + 1 + Math.random();
+  const roundedDistance = Math.round(distanceKm * 100) / 100;
+
+  let price = 0;
+
+  // Logic from docs/detalles/cotizar_lowcost.md
+  if (roundedDistance <= 3.00) {
+    price = 3000;
+  } else if (roundedDistance <= 5.00) {
+    price = 4000;
+  } else if (roundedDistance <= 7.00) {
+    price = 5300;
+  } else if (roundedDistance <= 10.00) {
+    price = 7000;
+  } else {
+    // > 10km: Base $7000 + $700 per extra km
+    const extraKm = roundedDistance - 10.00;
+    price = 7000 + (extraKm * 700);
+  }
+
+  price = Math.round(price * 100) / 100;
+
+  return {
+    distance: roundedDistance,
+    price,
+    estimatedTime: "En el día (antes de las 19:00 hs)",
   };
 }
