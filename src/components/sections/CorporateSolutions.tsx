@@ -1,31 +1,33 @@
+
 "use client";
 
 import { Building2, Box, Laptop, Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const corps = [
-  {
-    title: "Soluciones Corporativas",
-    img: "/resources/auHzaMFScwRfa6f8eT8_cX",
-    icon: <Building2 className="w-8 h-8" />,
-    features: ["Cuenta Corriente Flexible", "Facturación simplificada", "Gestión multi-usuario", "Reportes de impacto"]
-  },
-  {
-    title: "Envíos Flex MercadoLibre",
-    img: "/resources/bSarC8GVoRO4BjG_G4ROIr",
-    icon: <Box className="w-8 h-8" />,
-    features: ["Cumplimiento de SLAs", "Mejora tu reputación", "Tarifas competitivas", "Soporte Flex dedicado"]
-  },
-  {
-    title: "Logística E-Commerce",
-    img: "/resources/brbGQiFjedd1sjtRqxQ_Dl",
-    icon: <Laptop className="w-8 h-8" />,
-    features: ["Integración tecnológica", "Rutas optimizadas", "Flota especializada", "Seguimiento en tiempo real"]
-  }
-];
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function CorporateSolutions() {
+  const corps = [
+    {
+      title: "Soluciones Corporativas",
+      img: PlaceHolderImages.find(img => img.id === 'corp-plans'),
+      icon: <Building2 className="w-8 h-8" />,
+      features: ["Cuenta Corriente Flexible", "Facturación simplificada", "Gestión multi-usuario", "Reportes de impacto"]
+    },
+    {
+      title: "Envíos Flex MercadoLibre",
+      img: PlaceHolderImages.find(img => img.id === 'envios-flex'),
+      icon: <Box className="w-8 h-8" />,
+      features: ["Cumplimiento de SLAs", "Mejora tu reputación", "Tarifas competitivas", "Soporte Flex dedicado"]
+    },
+    {
+      title: "Logística E-Commerce",
+      img: PlaceHolderImages.find(img => img.id === 'ecommerce-logistics'),
+      icon: <Laptop className="w-8 h-8" />,
+      features: ["Integración tecnológica", "Rutas optimizadas", "Flota especializada", "Seguimiento en tiempo real"]
+    }
+  ];
+
   return (
     <section className="corp-solutions py-16 md:py-24 bg-light dark:bg-slate-900 utility-bg">
       <div className="container mx-auto px-4 md:px-8">
@@ -43,7 +45,16 @@ export function CorporateSolutions() {
           {corps.map((c, i) => (
             <div key={i} className="corp-card group bg-white dark:bg-slate-800 border border-[#e2e8f0] dark:border-slate-700 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(30,58,138,0.1)] dark:hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] hover:-translate-y-2 rounded-lg">
               <div className="corp-img relative h-[200px] md:h-[240px] bg-dark overflow-hidden">
-                <Image src={c.img} alt={c.title} fill className="object-cover opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:contrast-110 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                {c.img && (
+                  <Image 
+                    src={c.img.imageUrl} 
+                    alt={c.title} 
+                    fill 
+                    data-ai-hint={c.img.imageHint}
+                    className="object-cover opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:contrast-110 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" 
+                  />
+                )}
                 <div className="absolute -bottom-[20px] md:-bottom-[25px] right-4 md:right-5 w-[44px] h-[44px] md:w-[50px] md:h-[50px] bg-accent text-dark flex items-center justify-center text-xl md:text-2xl shadow-[0_4px_10px_rgba(0,0,0,0.2)] z-10 transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-12 group-hover:bg-primary group-hover:text-accent rounded-md">
                   {c.icon}
                 </div>

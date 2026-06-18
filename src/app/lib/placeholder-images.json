@@ -8,69 +8,69 @@
       "imageHint": "company logo"
     },
     {
-      "id": "hero-bg",
-      "description": "Logistics City Map Hero",
-      "imageUrl": "resources/a9qSjwlZ7cefb7cizHHkm-",
+      "id": "hero-map-bg",
+      "description": "High-contrast stylized city map for logistics background",
+      "imageUrl": "https://picsum.photos/seed/envios-hero/1920/1080",
       "imageHint": "city map"
     },
     {
       "id": "vision-map",
-      "description": "Logistics Coverage Map",
-      "imageUrl": "resources/bmQcUMs5EU86j5sgCJl_x3",
+      "description": "Digital map interface with logistics routes",
+      "imageUrl": "https://picsum.photos/seed/envios-vision/1000/800",
       "imageHint": "route map"
     },
     {
       "id": "cta-bg",
-      "description": "Abstract Tech Background",
-      "imageUrl": "resources/aDC-m8qZ91F4iv1AmrW_vS",
+      "description": "Abstract geometric tech background with gradients",
+      "imageUrl": "https://picsum.photos/seed/envios-cta/1200/600",
       "imageHint": "abstract geometric"
     },
     {
-      "id": "corp-1",
-      "description": "Soluciones Corporativas",
-      "imageUrl": "resources/auHzaMFScwRfa6f8eT8_cX",
+      "id": "corp-plans",
+      "description": "Modern corporate warehouse or office environment",
+      "imageUrl": "https://picsum.photos/seed/envios-corp1/800/600",
       "imageHint": "office building"
     },
     {
-      "id": "corp-2",
-      "description": "Envíos Flex",
-      "imageUrl": "resources/bSarC8GVoRO4BjG_G4ROIr",
+      "id": "envios-flex",
+      "description": "Delivery package with MercadoLibre style branding",
+      "imageUrl": "https://picsum.photos/seed/envios-corp2/800/600",
       "imageHint": "delivery box"
     },
     {
-      "id": "corp-3",
-      "description": "Logística E-Commerce",
-      "imageUrl": "resources/brbGQiFjedd1sjtRqxQ_Dl",
+      "id": "ecommerce-logistics",
+      "description": "Logistics operations on a laptop or digital device",
+      "imageUrl": "https://picsum.photos/seed/envios-corp3/800/600",
       "imageHint": "laptop distribution"
     },
     {
-      "id": "social-1",
-      "description": "Social Post 1",
-      "imageUrl": "resources/9uqImJ8rV8RevmhuX7m4M0",
+      "id": "social-post-1",
+      "description": "Courier hands preparing a package",
+      "imageUrl": "https://picsum.photos/seed/envios-soc1/600/600",
       "imageHint": "courier hands"
     },
     {
-      "id": "social-2",
-      "description": "Social Post 2",
-      "imageUrl": "resources/87w9mIEHzJJ4KnONh424qf",
+      "id": "social-post-2",
+      "description": "Modern logistics promotion post",
+      "imageUrl": "https://picsum.photos/seed/envios-soc2/600/600",
       "imageHint": "promotion post"
     },
     {
-      "id": "social-3",
-      "description": "Social Post 3",
-      "imageUrl": "resources/8ABUMGlR7jB3OJgSw-M_Df",
+      "id": "social-post-3",
+      "description": "Close-up of motorcycle wheel on asphalt",
+      "imageUrl": "https://picsum.photos/seed/envios-soc3/600/600",
       "imageHint": "motorcycle wheel"
     },
     {
-      "id": "social-4",
-      "description": "Social Post 4",
-      "imageUrl": "resources/aBLv2uSUlYX23t6d9jvkNs",
+      "id": "social-post-4",
+      "description": "Logistics community building post",
+      "imageUrl": "https://picsum.photos/seed/envios-soc4/600/600",
       "imageHint": "community post"
     },
     {
-      "id": "social-5",
-      "description": "Social Post 5",
-      "imageUrl": "resources/8C68LBXNqOu5mZ5lOeJ4bY",
+      "id": "social-post-5",
+      "description": "Warehouse dispatching operation",
+      "imageUrl": "https://picsum.photos/seed/envios-soc5/600/600",
       "imageHint": "dispatch post"
     }
   ]

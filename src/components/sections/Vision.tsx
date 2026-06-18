@@ -4,8 +4,11 @@
 import { Bolt, ShieldHalf, Play } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Vision() {
+  const visionMap = PlaceHolderImages.find(img => img.id === 'vision-map');
+
   return (
     <section id="nosotros" className="py-16 md:py-24 bg-light dark:bg-slate-900 utility-bg">
       <div className="container mx-auto px-4 md:px-8 grid lg:grid-cols-2 items-center gap-12 md:gap-16">
@@ -18,8 +21,8 @@ export function Vision() {
           <p className="text-base md:text-[1.2rem] max-w-[700px] dark:text-slate-300">Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio.</p>
           
           <div className="grid gap-6 md:gap-8">
-            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group hover:translate-x-[10px] transition-transform duration-400">
-              <div className="flex items-center justify-center w-[50px] h-[50px] md:w-[60px] md:h-[60px] bg-primary text-accent rounded-lg text-2xl shrink-0 transition-all duration-400 group-hover:bg-secondary group-hover:text-light group-hover:rotate-12 group-hover:scale-110">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group hover:translate-x-[10px] transition-transform duration-300">
+              <div className="flex items-center justify-center w-[50px] h-[50px] md:w-[60px] md:h-[60px] bg-primary text-accent rounded-lg text-2xl shrink-0 transition-all duration-300 group-hover:bg-secondary group-hover:text-light group-hover:rotate-12 group-hover:scale-110">
                 <Bolt className="w-6 h-6 md:w-8 md:h-8" />
               </div>
               <div className="feature-text">
@@ -28,8 +31,8 @@ export function Vision() {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group hover:translate-x-[10px] transition-transform duration-400">
-              <div className="flex items-center justify-center w-[50px] h-[50px] md:w-[60px] md:h-[60px] bg-primary text-accent rounded-lg text-2xl shrink-0 transition-all duration-400 group-hover:bg-secondary group-hover:text-light group-hover:rotate-12 group-hover:scale-110">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group hover:translate-x-[10px] transition-transform duration-300">
+              <div className="flex items-center justify-center w-[50px] h-[50px] md:w-[60px] md:h-[60px] bg-primary text-accent rounded-lg text-2xl shrink-0 transition-all duration-300 group-hover:bg-secondary group-hover:text-light group-hover:rotate-12 group-hover:scale-110">
                 <ShieldHalf className="w-6 h-6 md:w-8 md:h-8" />
               </div>
               <div className="feature-text">
@@ -58,13 +61,16 @@ export function Vision() {
         <div className="relative mt-8 lg:mt-0">
           <div className="relative p-4 md:p-6 bg-white dark:bg-slate-800 border-2 border-primary dark:border-white shadow-[8px_8px_0px_rgba(30,58,138,0.1)] md:shadow-[15px_15px_0px_rgba(30,58,138,0.1)] dark:shadow-[8px_8px_0px_rgba(255,255,255,0.1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_rgba(30,58,138,0.2)] md:hover:shadow-[25px_25px_0px_rgba(30,58,138,0.2)] transition-all duration-500 group">
             <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
-              <Image
-                src="/resources/bmQcUMs5EU86j5sgCJl_x3"
-                alt="Mapa de cobertura logística"
-                fill
-                className="object-cover transition-all group-hover:brightness-105 group-hover:contrast-110"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              {visionMap && (
+                <Image
+                  src={visionMap.imageUrl}
+                  alt={visionMap.description}
+                  fill
+                  data-ai-hint={visionMap.imageHint}
+                  className="object-cover transition-all group-hover:brightness-105 group-hover:contrast-110"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              )}
             </div>
             <div className="absolute -top-5 -right-5 w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-[radial-gradient(circle,rgba(59,130,246,0.4)_0%,transparent_70%)] z-0 group-hover:scale-150 transition-transform duration-500" />
             <div className="absolute -bottom-4 -left-4 md:-bottom-[30px] md:-left-[30px] bg-primary dark:bg-accent text-white dark:text-black px-4 py-4 md:px-8 md:py-6 flex flex-row items-center gap-4 md:gap-6 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition-transform group-hover:-translate-y-2">

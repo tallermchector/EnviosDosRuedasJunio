@@ -1,17 +1,19 @@
+
 "use client";
 
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
 import Image from "next/image";
-
-const posts = [
-  { img: "/resources/9uqImJ8rV8RevmhuX7m4M0", link: "https://instagram.com/enviosdosruedas" },
-  { img: "/resources/87w9mIEHzJJ4KnONh424qf", link: "https://www.facebook.com/enviosdosruedas" },
-  { img: "/resources/8ABUMGlR7jB3OJgSw-M_Df", link: "https://instagram.com/enviosdosruedas" },
-  { img: "/resources/aBLv2uSUlYX23t6d9jvkNs", link: "https://www.facebook.com/enviosdosruedas" },
-  { img: "/resources/8C68LBXNqOu5mZ5lOeJ4bY", link: "https://instagram.com/enviosdosruedas" }
-];
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function SocialGallery() {
+  const posts = [
+    PlaceHolderImages.find(img => img.id === 'social-post-1'),
+    PlaceHolderImages.find(img => img.id === 'social-post-2'),
+    PlaceHolderImages.find(img => img.id === 'social-post-3'),
+    PlaceHolderImages.find(img => img.id === 'social-post-4'),
+    PlaceHolderImages.find(img => img.id === 'social-post-5'),
+  ].filter(Boolean);
+
   const allPosts = [...posts, ...posts]; // Duplicated for infinite scroll illusion
 
   return (
@@ -54,11 +56,22 @@ export function SocialGallery() {
         <div className="carousel-track-anim flex gap-4 md:gap-6 px-4 md:px-8 w-max hover:pause">
           {allPosts.map((p, i) => (
             <div key={i} className="carousel-item relative w-[250px] h-[250px] md:w-[320px] md:h-[320px] shrink-0 group overflow-hidden">
-              <Image src={p.img} alt="Social content" fill className="object-cover transition-all duration-500 group-hover:brightness-50 group-hover:grayscale-[50%]" sizes="(max-width: 768px) 250px, 320px" />
-              <a href={p.link} target="_blank" className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-white opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0" aria-label="Ver post en red social">
-                <Instagram className="w-10 h-10 md:w-12 md:h-12 text-accent transition-transform hover:scale-120" />
-                <span className="font-subheadline text-[1.4rem] md:text-[1.8rem] tracking-wider uppercase">VER POST</span>
-              </a>
+              {p && (
+                <>
+                  <Image 
+                    src={p.imageUrl} 
+                    alt={p.description} 
+                    fill 
+                    data-ai-hint={p.imageHint}
+                    className="object-cover transition-all duration-500 group-hover:brightness-50 group-hover:grayscale-[50%]" 
+                    sizes="(max-width: 768px) 250px, 320px" 
+                  />
+                  <a href="https://instagram.com/enviosdosruedas" target="_blank" className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-white opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0" aria-label="Ver post en red social">
+                    <Instagram className="w-10 h-10 md:w-12 md:h-12 text-accent transition-transform hover:scale-120" />
+                    <span className="font-subheadline text-[1.4rem] md:text-[1.8rem] tracking-wider uppercase">VER POST</span>
+                  </a>
+                </>
+              )}
             </div>
           ))}
         </div>
