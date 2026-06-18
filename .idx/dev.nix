@@ -8,6 +8,7 @@
     pkgs.nodejs_22
     pkgs.zulu
     pkgs.pnpm
+    pkgs.openssl
   ];
   # Sets environment variables in the workspace
   env = {};
