@@ -2,7 +2,7 @@ import { Quote, MessageSquare, Star } from "lucide-react";
 import { TESTIMONIALS_DATA } from "@/lib/data";
 
 
-export default function Reviews() {
+export function Testimonials() {
   return (
     <section id="resenas" className="relative py-20 bg-slate-100 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
