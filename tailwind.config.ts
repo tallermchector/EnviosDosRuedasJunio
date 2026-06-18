@@ -1,4 +1,3 @@
-
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -11,12 +10,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Anton', 'sans-serif'],
-        subheadline: ['Bebas Neue', 'sans-serif'],
-        code: ['monospace'],
+        body: ['system-ui', '-apple-system', 'sans-serif'],
+        display: ['Anton', 'sans-serif'],
+        subhead: ['Bebas Neue', 'sans-serif'],
       },
       colors: {
+        primary: '#1E3A8A',
+        secondary: '#3B82F6',
+        accent: '#EAB308',
+        light: '#F8FAFC',
+        dark: '#0f172a',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -27,79 +30,61 @@ export default {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        dark: 'var(--color-dark)',
-        light: 'var(--color-light)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
-        },
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
       },
       boxShadow: {
-        brutal: '6px 6px 0px 0px rgba(0,0,0,1)',
+        brutal: '6px 6px 0px 0px rgba(234, 179, 8, 1)',
         'brutal-sm': '3px 3px 0px 0px rgba(0,0,0,1)',
       },
       keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+        pulseDot: {
+          '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(234, 179, 8, 0.7)' },
+          '70%': { transform: 'scale(1)', boxShadow: '0 0 0 10px rgba(234, 179, 8, 0)' },
+          '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(234, 179, 8, 0)' },
+        },
+        slowZoom: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
+        },
+        scrollTrack: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-50% - 0.75rem))' },
+        },
+        slideLine: {
+          '0%': { transform: 'scaleX(0)' },
+          '100%': { transform: 'scaleX(1)' },
+        },
+        floatCard1: {
+          '0%, 100%': { transform: 'translateY(0) rotate(-2deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(0deg)' },
+        },
+        floatCard2: {
+          '0%, 100%': { transform: 'translateY(0) rotate(2deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(0deg)' },
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in-up': 'fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards',
+        'pulse-dot': 'pulseDot 2s infinite',
+        'slow-zoom': 'slowZoom 25s linear infinite alternate',
+        'scroll-track': 'scrollTrack 30s linear infinite',
+        'slide-line': 'slideLine 1s cubic-bezier(0.19, 1, 0.22, 1) forwards',
+        'float-card-1': 'floatCard1 6s ease-in-out infinite',
+        'float-card-2': 'floatCard2 7s ease-in-out infinite reverse',
       },
     },
   },

@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -30,19 +29,19 @@ const faqs = [
 export function FAQ() {
   return (
     <section id="faq" className="py-24 bg-white">
-      <div className="container max-w-4xl mx-auto px-4">
+      <div className="container max-w-4xl">
         <div className="text-center mb-16">
           <div className="section-badge mb-4">Preguntas Frecuentes</div>
-          <h2 className="text-5xl text-primary font-headline">Despejá tus dudas</h2>
+          <h2 className="text-primary">Despejá tus dudas</h2>
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-2 border-slate-100 px-6 rounded-xl hover:border-secondary transition-colors">
-              <AccordionTrigger className="text-2xl font-subheadline text-primary hover:text-secondary hover:no-underline py-6">
+            <AccordionItem key={i} value={`item-${i}`} className="border-2 border-slate-100 px-8 rounded-2xl hover:border-secondary transition-colors">
+              <AccordionTrigger className="text-2xl font-subhead text-primary hover:text-secondary hover:no-underline py-8">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-lg text-slate-600 pb-6">
+              <AccordionContent className="text-xl text-slate-600 pb-8 leading-relaxed">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
